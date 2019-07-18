@@ -14,10 +14,10 @@
 
             zamień podaj-nazwę-parametru na nazwę argumentu z 'przekierowanego' url'a
     -->
-    <div th:if="${param.podaj-nazwę-argumentu}" class="alert alert-danger">Invalid credentials !</div>
+    <div th:if="${param.}" class="alert alert-danger">Invalid credentials !</div>
 
     <!--TODO 2 ustaw th:action na utworzony endpoint w LoginController -->
-    <form th:action="" method="post" class="form-horizontal">
+    <form th:action="@{/login}" method="post" class="form-horizontal">
         <div class="form-group">
             <label class="control-label col-xs-2" for="username"> User Name: </label>
 

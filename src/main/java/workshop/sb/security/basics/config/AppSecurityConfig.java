@@ -24,9 +24,12 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()
                 .antMatchers("/delete/**").hasRole("ADMIN")
+                .antMatchers("/webjars/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
-                .formLogin();
+                .formLogin()
+                .loginPage("/login")
+                .permitAll();
     }
 
                 /*
@@ -41,5 +44,4 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
                     2. stylowania strony - zezwól na przepuszczanie wszystkich request'ów na '/webjars/**'
 
                  */
-
 }
